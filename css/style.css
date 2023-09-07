@@ -1,0 +1,212 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #66A5AD;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	color:#C4DFE6;
+	font-size: 20px;
+	font-family: cursive;
+}
+.game {
+    background-color: #07575B;
+	border:5px solid #003B46;
+	width: 100%;
+	max-width: 700px;
+	border-radius:50px;
+    position: relative;
+}
+.game .game-wrapper {
+	margin: 50px;
+}
+.game h1 {
+	font-size: 30px;
+	text-align: center;
+}
+.game .volume {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+.players {
+	width: 300px;
+	border:5px solid #003B46;
+	border-radius:50px;
+	margin: 20px auto 0 auto;
+	padding: 0 15px 21px 15px;
+	display: flex;
+	justify-content: space-around;
+	font-size: 44px;
+}
+
+.players span.middle {
+	margin: 17px 25px 5px 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.counter {
+	position: relative;
+	width: 50px;
+	text-align: center;
+}
+.counter::before {
+	content:"";
+	display: block;
+	padding:1px 9px;
+	color: #C4DFE6;
+	font-size: 15px;
+	position: absolute;
+	top:50px;
+}
+.count-user::before {
+	content:"User";
+	left: -0px;
+}
+.count-comp::before {
+	content:"Robot";
+	right:-0px;
+}
+.figure-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:30px 20px;
+}
+.user-field,
+.comp-field {
+	width: 50%;
+	display: flex;
+}
+.field {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border:4px solid #003B46;
+	cursor: pointer;
+	margin:5px;
+	transition:.2s;
+	overflow: hidden;
+	box-shadow: 3px 3px 5px #003B46;
+	outline: none;
+}
+.result {
+	text-align: center;
+}
+.field.active {
+	background-color: #66A5AD;
+}
+.field.error {
+	background-color: #CE5A57;
+}
+.comp-field {
+	justify-content: flex-end;
+}
+.rock {
+	background: url(../img/rock.png) center no-repeat;
+}
+.scissors {
+	background: url(../img/scissors.png) center no-repeat;
+}
+.paper {
+	background: url(../img/paper.png) center no-repeat;
+}
+.comp-field.blink .rock {
+	animation: blink 0.3s linear infinite;
+}
+.comp-field.blink .scissors {
+	animation: blink 0.3s 0.1s linear infinite;
+}
+.comp-field.blink .paper {
+	animation: blink 0.3s 0.2s linear infinite;
+}
+.comp-field.blink {
+	animation-play-state: paused;
+}
+@keyframes blink {
+	100% {background-color: #66A5AD;}
+}
+.buttons {
+	padding:20px 15px;
+	text-align: center;
+}
+.buttons button {
+    background-color: #07575B;
+	border:5px solid #003B46;
+	margin:0 8px;
+	cursor:pointer;
+	border:none;
+	border-radius:30px;
+	color:#fff;
+	text-transform: uppercase;
+	padding:10px 20px;
+	font-weight: bold;
+	font-size: 16px;
+	box-shadow: 2px 3px 0 #003B46;
+	transition:.2s;
+	outline: none;
+}
+.buttons button:not([disabled]):hover,
+.buttons button:active {
+	transform:translate(1px,1px);
+	box-shadow: 1px 1px 0 #003B46;
+}
+.clear-score {
+    background-color: #07575B;
+	border:5px solid #003B46;
+}
+
+.timer {
+    color: #07575B;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px;
+}
+
+
+@media(max-width:700px) {
+	.game {
+		padding: 10px;
+	}
+	.figure-container {
+		flex-direction: column;
+	}
+	.user-field,
+	.comp-field {
+		width: 100%;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+	.user-field {
+		margin-bottom: 20px;
+	}
+	.user-field::before {
+		content:"User";
+		display: block;
+		width: 100%;
+		font-size: 20px;
+		text-align: center;
+	}
+	.comp-field::before {
+		content:"Robot";
+		display: block;
+		width: 100%;
+		font-size: 20px;
+		text-align: center;
+	}
+	.game h1 {
+		font-size: 20px;
+	}
+}
+

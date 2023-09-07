@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rock-Scissors-Paper </title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    <div class="game">
+        <div class="volume"> 
+            <img class="button up" src="img/volumeup.png">
+            <img class="button off hidden" src="img/volumeoff.png">
+        </div>
+        <div class="game-wrapper">
+            <h1> Rock-Scissors-Paper </h1>
+            <div class="players">
+                <div class="counter count-user">0</div>
+                <span class="middle">:</span>
+                <div class="counter count-comp">0</div>
+            </div>
+            <div class="figure-container">
+                <div class="user-field">
+                    <button class="field rock" data-field="r"></button>
+                    <button class="field scissors" data-field="s"></button>
+                    <button class="field paper" data-field="p"></button>
+                </div>
+                <div class="comp-field">
+                    <button class="field rock" data-field="r"></button>
+                    <button class="field scissors" data-field="s"></button>
+                    <button class="field paper" data-field="p"></button>
+                </div>
+            </div>
+            <h3 class="result">Make a choice</h3>
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="start-game">Start Game</button>
+        <span class="timer">3</span>
+        <button class="clear-score">Clear score</button>
+    </div>
+   <audio src="#" class="sound"></audio>
+   <script src="js/app.js"></script>
+</body>
+</html>
