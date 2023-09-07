@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             compField.classList.remove('blink');
             compStep = fields[rand].dataset.field;
             fields.forEach(item => item.classList.remove('active'));
-            fields[rand].classList.add('active')
+            fields[rand].classList.add('active');
             winner();
         }, oneSecond * 3);
     }
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function clearGame () {
-        blocked =true
+        blocked =true;
         countU = countC = 0;
         res.innerText = 'Make a choice';
         countUser.innerText = '0';
@@ -132,10 +132,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function changeVolume (event) {
         event.target.classList.add('hidden');
-        sound.pause()
         if (event.target.classList.contains('up')) {
+            sound.pause();
             event.target.nextElementSibling.classList.remove('hidden');
         } else {
+            sound.play();
             event.target.previousElementSibling.classList.remove('hidden');
         }
     }
